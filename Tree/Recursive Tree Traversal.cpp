@@ -10,6 +10,23 @@ struct TreeNode
     TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
 };
 
+/*
+递归基本模式，用来理解递归序 (Basic recursive structure to understand recursion)
+void f(TreeNode* head) {
+    if (head == nullptr) {
+        return; // 基础条件：当前节点为空时返回 (Base case: Return when the node is null)
+    }
+    // 1——第1次来到该节点
+    f(head->left);  // 递归处理左子树 (Recursively process the left subtree)
+    // 2——第2次来到该节点
+    f(head->right); // 递归处理右子树 (Recursively process the right subtree)
+    // 3——第3次来到该节点
+}
+
+前中后只是打印节点的的次序不同
+任何一个非空节点都要来到3次，null节点只有1次
+*/
+
 // 先序打印所有节点，Recursive Pre-order traversal
 void preOrder(TreeNode *head)
 {
